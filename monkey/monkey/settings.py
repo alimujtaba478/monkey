@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'drf_multiple_model',
+'webpack_loader',
 ]
 
 MIDDLEWARE = [
@@ -136,9 +137,16 @@ MEDIA_URL = "/media/"
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
     # os.path.join(BASE_DIR, "resources/src/assets"),
-    os.path.join(BASE_DIR, "resources/dist")
+    #os.path.join(BASE_DIR, "resources/dist")
 ]
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'uploaded_media')
+
+# WEBPACK_LOADER = {
+#     'DEFAULT': {
+#         'BUNDLE_DIR_NAME': 'dist/',
+#         'STATS_FILE': os.path.join(BASE_DIR, 'resources', 'webpack-stats.json'),
+#     }
+# }
 
