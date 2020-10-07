@@ -1,1 +1,1 @@
-web: gunicorn  monkey.wsgi --log-file-
+web: gunicorn monkey monkey.wsgi 
