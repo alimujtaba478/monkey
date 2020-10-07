@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath monkey monkey.wsgi
+web: gunicorn  monkey.wsgi
