@@ -1,1 +1,1 @@
-web: gunicorn monkey.monkey.wsgi:application
+web: gunicorn monkey/monkey/wsgi
