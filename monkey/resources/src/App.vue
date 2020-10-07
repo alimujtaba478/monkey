@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <NavbarComponent />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import NavbarComponent from "@/components/Navbar.vue";
+import { apiService } from "@/common/api.service.js";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
+    NavbarComponent
+  },  
+  methods: {
+    async setUserInfo() {      
+      const data = await apiService("/api/user/");
+      const requestUser = data["username"];
+      window.localStorage.setItem("username", requestUser);
+    }
+  },
+  created() {
+    this.setUserInfo()    
+  }  
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  html, body {
+      height: 100%;
+      font-family: "Montserrat", serif;           
+  }
+  /* .btn:focus {
+    box-shadow: none !important;
+  } */
 </style>
