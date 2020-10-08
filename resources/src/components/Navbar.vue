@@ -12,7 +12,7 @@
           placeholder="Rechercher un restaurant"
           v-on:placechanged="getAddressData"
           country="fr"
-          types="establishment"          
+          types="establishment"
         ></vue-google-autocomplete>
 
         <ul class="navbar-nav mr-2">

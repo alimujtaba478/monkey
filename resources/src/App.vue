@@ -29,7 +29,7 @@ export default {
 <style>
   html, body {
       height: 100%;
-      font-family: "Montserrat", serif;           
+      font-family: "Montserrat", serif;
   }
   /* .btn:focus {
     box-shadow: none !important;

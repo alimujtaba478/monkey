@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <div class="container mt-3">      
+    <div class="container mt-3">
       <div class="row mt-3 singleReview border border-primary"
             v-for="(review, index) in reviews"
             :key="review.pk">
@@ -8,30 +8,30 @@
           <p class="mb-0">Visité par:
             <span><b class="text-danger">{{ review.review_author }}</b>, le  <i>{{ review.created_at }}</i></span>
           </p>
-          <h2 @click="getDetails(review.maps)" class="restName"><b> {{ review.restaurant_name }}</b></h2>                      
-          <p class="text-success" >{{ review.restaurant_adress }}</p> 
-          <hr class="mb-0">    
+          <h2 @click="getDetails(review.maps)" class="restName"><b> {{ review.restaurant_name }}</b></h2>
+          <p class="text-success" >{{ review.restaurant_adress }}</p>
+          <hr class="mb-0">
         </div>
         <div class="col-4 text-center my-auto">
-          <button v-show="reviewToShow !== index" 
-                  type="button" class="btn btn -sm btn-outline-info" 
+          <button v-show="reviewToShow !== index"
+                  type="button" class="btn btn -sm btn-outline-info"
                   @click="reviewToShow= index">Consulter
           </button>
-          <button v-show="reviewToShow == index" 
-                  type="button" class="btn btn -sm btn-outline-danger" 
+          <button v-show="reviewToShow == index"
+                  type="button" class="btn btn -sm btn-outline-danger"
                   @click="reviewToShow= null">Refermer
-          </button>  
-        </div>       
+          </button>
+        </div>
         <hr>
 
          <div v-show="reviewToShow == index">
           <ReviewDetail
           :id="review.id"/>
-        </div>       
-        
+        </div>
+
       </div>
 
-    <div class="mt-3">          
+    <div class="mt-3">
           <button
           v-show="next"
           @click="getReviews"
@@ -103,7 +103,7 @@ export default {
 </script>
 
 <style >
-.pac-container:after {  
+.pac-container:after {
   background-image: none !important;
     height: 0px;
 }
@@ -112,7 +112,7 @@ body {
 }
 .singleReview {
   background-color: white;
-  border: 1px solid 
+  border: 1px solid
 }
 a:hover {
   text-decoration: none;
